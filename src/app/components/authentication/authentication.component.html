@@ -1,0 +1,98 @@
+<div class="container">
+  <mat-card style="width: 25%">
+    <mat-card-header style="padding: 24px;"><h1 class="white-text">Login</h1> </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSignIn()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+          @if(loginForm.get('email')?.hasError('required')){
+
+          <mat-error>Email is required</mat-error>
+          } @if(loginForm.get('email')?.hasError('email')){
+
+          <mat-error>Please enter a valid email</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          @if(loginForm.get('password')?.hasError('required')){
+
+      <mat-error>Password is required</mat-error>
+      }
+        </mat-form-field>
+
+        <button mat-button mat-raised-button color="primary" type="submit">
+          Login
+        </button>
+        <div class="white-text" style="margin-top: 16px">
+          <p style="margin: 0">Or Sign Up Using</p>
+        </div>
+        <div style="margin-top: 16px">
+          <button
+            mat-mini-fab
+            aria-label="Example icon button with a delete icon"
+            style="background: white"
+            type="button"
+            (click)="onSignInWithGoogle()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+              width="24"
+              height="24"
+            >
+              <path
+                fill="#4285F4"
+                d="M24 9.5c3.9 0 6.6 1.6 8.1 2.8l5.9-5.9C33.3 3.4 28.9 1.5 24 1.5 14.9 1.5 7.4 7.4 4.6 15.5l6.9 5.3C13 15 17.8 9.5 24 9.5z"
+              />
+              <path
+                fill="#34A853"
+                d="M46.6 24.5c0-1.4-.1-2.5-.3-3.7H24v7h12.8c-.7 3.7-2.7 6.9-5.7 8.9l8.8 6.8C45.2 37.7 46.6 31.6 46.6 24.5z"
+              />
+              <path
+                fill="#FBBC05"
+                d="M10.4 28.7c-.5-1.4-.8-2.9-.8-4.5s.3-3.1.8-4.5L2.7 14C1 17.6 0 21.7 0 26c0 4.3 1 8.4 2.7 12l7.7-5.3z"
+              />
+              <path
+                fill="#EA4335"
+                d="M24 48c6.5 0 12-2.2 16-5.9l-7.7-5.9c-2.3 1.5-5.2 2.5-8.3 2.5-6.2 0-11.4-4.2-13.3-10.1l-7.7 5.3C7.5 42.6 15.2 48 24 48z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          style="
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <p class="white-text">Or Sign Up Using</p>
+          <a class="white-text">SIGN UP</a>
+        </div>
+        <!-- <button
+        mat-button
+        mat-raised-button
+        color="tertiary"
+        type="button"
+        (click)="onSignUp()"
+        >
+        Register
+      </button> -->
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

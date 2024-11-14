@@ -1,0 +1,31 @@
+<div class="home">
+  <div class="chat-list">
+    @for(user of users  ; track user){
+      <div class="contact" style="justify-content: space-between;" (click)="goToChat(user)">
+        <div style="display: flex;flex-direction: row;">
+          <div class="image-circle"></div>
+          <div class="contact-info">
+            <p style="margin: 0;">{{user.email}}</p>
+            <p style="margin: 0; margin-top: 4px;">{{user.lastMessage?.text}}</p>
+          </div>
+        </div>
+        <div class="time">{{user.lastMessage?.timestamp | date: 'HH:mm'}}</div>
+      </div>
+      <mat-divider></mat-divider>
+    }
+  </div>
+<div class="chat" style="width: 75%;">
+  @if(selectedChat){
+
+    <app-chat [recipient]="selectedChat"></app-chat>
+  }@else{
+    <div class="no-chat-selected">
+      <p>Seleziona una chat per iniziare a chattare</p>
+    </div>
+  }
+  </div>
+</div>
+
+<ul>
+
+</ul>

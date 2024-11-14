@@ -1,0 +1,28 @@
+<div class="chat-container">
+  <div class="chat-info">
+    <div class="image-circle"></div>
+    <div class="info">
+      <p>{{recipient?.email}}</p>
+      @if(recipient?.status === 'online') {
+        <p>Online</p>
+      }@else {
+        <p>Last Online : {{recipient?.lastOnline | date : 'dd/mm/yyyy HH:mm'}}</p>
+      }
+    </div>
+    <div class="chat-tools"></div>
+  </div>
+  <div class="text-container"></div>
+  <div class="text-input"></div>
+</div>
+  <!-- <div class="messages-container">
+    <div *ngFor="let message of messages" class="message">
+      <strong>{{ message.senderId }}:</strong> {{ message.text }}
+      <small>{{ message.timestamp | date:'shortTime' }}</small>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input [(ngModel)]="messageText" placeholder="Scrivi un messaggio..." />
+    <button (click)="sendMessage()">Invia</button>
+  </div>
+</div> -->

@@ -1,0 +1,18 @@
+
+.image-circle{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: grey;
+  margin-right: 16px;
+}
+
+.chat-info{
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+p{
+  margin: 0;
+}
